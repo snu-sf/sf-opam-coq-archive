@@ -1,0 +1,3 @@
+opam-version: "2.0"
+browse: "https://github.com/snu-sf/sf-opam-coq-archive"
+upstream: "https://github.com/snu-sf/sf-opam-coq-archive/tree/master"
