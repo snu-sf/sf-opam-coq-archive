@@ -17,3 +17,8 @@ depends: [
 
 build: [make "-j%{jobs}%"]
 install: [make "-f" "Makefile.coq" "install"]
+remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/Ordinal"]
+
+url {
+  git: "https://github.com/minkiminki/Ordinal.git#master"
+}
