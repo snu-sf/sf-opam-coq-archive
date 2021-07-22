@@ -1,6 +1,6 @@
 opam-version: "2.0"
 name: "coq-ext-lib"
-version: "dev"
+version: "poly"
 maintainer: "Minki Cho <minki.cho@sf.snu.ac.kr>"
 synopsis: "Ordinal Numbers in Coq"
 
