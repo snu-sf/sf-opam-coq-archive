@@ -8,6 +8,6 @@
 
 ## Installation
 ```
-opam remote add coq-sf -k git https://github.com/snu-sf/sf-opam-coq-archive
+opam remote add coq-sf -k git --rank=2 https://github.com/snu-sf/sf-opam-coq-archive
 opam install [LIB]    # ex) opam install coq-sflib
 ```
