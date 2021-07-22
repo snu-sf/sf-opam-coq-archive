@@ -1,8 +1,8 @@
 opam-version: "2.0"
 name: "coq-ext-lib"
-version: "poly"
+version: "dev"
 maintainer: "Minki Cho <minki.cho@sf.snu.ac.kr>"
-synopsis: "Ordinal Numbers in Coq"
+synopsis: "a library of Coq definitions, theorems, and tactics"
 
 homepage: "https://github.com/snu-sf/coq-ext-lib"
 dev-repo: "git+https://github.com/snu-sf/coq-ext-lib"
@@ -22,7 +22,6 @@ depends: [
   "ocaml"
   "coq" {>= "8.8" | = "dev"}
 ]
-synopsis: "a library of Coq definitions, theorems, and tactics"
 url {
   src: "git+https://github.com/snu-sf/coq-ext-lib#poly"
 }
