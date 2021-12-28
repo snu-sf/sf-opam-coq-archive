@@ -1,16 +1,40 @@
 opam-version: "2.0"
 name: "coq-compcertr"
-maintainer: "youngju.song@sf.snu.ac.kr"
-synopsis: "CompCert refactored for CompCertM project"
+maintainer: "Youngju Song <youngju.song@sf.snu.ac.kr>"
+synopsis: "CompCert (x86_64) refactored for CompCertM project"
 homepage: "https://sf.snu.ac.kr/compcertm/"
 dev-repo: "git+https://github.com/snu-sf/CompCertR.git"
 bug-reports: "https://github.com/snu-sf/CompCertR/issues/"
 authors: [
   "Youngju Song <youngu.song@sf.snu.ac.kr>"
+  "Minki Cho <minki.cho@sf.snu.ac.kr>"
+  "Dongjoo Kim <dongjoo.kim@sf.snu.ac.kr>"
+  "Yonghyun Kim <yonghyun.kim@sf.snu.ac.kr>"
+  "Jeehoon Kang <jeehoon.kang@cp.kaist.ac.kr>"
+  "Chung-Kil Hur <gil.hur@sf.snu.ac.kr>"
 ]
-build: [make "-j%{jobs}%"]
-install: [make "-f" "Makefile.coq" "install"]
+# Below are copied from CompCert's configuration and slightly modified.
+license: "INRIA Non-Commercial License Agreement"
+build: [
+  ["./configure"
+  "amd64-linux" {os = "linux"}
+  "amd64-macosx" {os = "macos"}
+  "amd64-cygwin" {os = "cygwin"}
+  "-prefix" "%{prefix}%"
+  "-install-coqdev"
+  "-clightgen"
+  "-use-external-Flocq"
+  "-use-external-MenhirLib"
+  "-coqdevdir" "%{lib}%/coq/user-contrib/compcert"
+  "-ignore-coq-version"]
+  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
+]
+install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertr"]
 depends: [
   "coq" { (>= "8.13.2") & (< "8.15") }
+  "menhir" {>= "20190626" }
+  "ocaml" {>= "4.05.0"}
+  "coq-flocq" {>= "3.1.0" & < "4~"}
+  "coq-menhirlib" {>= "20190626"}
 ]
