@@ -1,10 +1,10 @@
 opam-version: "2.0"
-name: "coq-compcertr"
+name: "coq-compcertm"
 maintainer: "Youngju Song <youngju.song@sf.snu.ac.kr>"
-synopsis: "CompCert (x86_64) refactored for CompCertM project"
+synopsis: "CompCertM"
 homepage: "https://sf.snu.ac.kr/compcertm/"
-dev-repo: "git+https://github.com/snu-sf/CompCertR.git"
-bug-reports: "https://github.com/snu-sf/CompCertR/issues/"
+dev-repo: "git+https://github.com/snu-sf/CompCertM.git"
+bug-reports: "https://github.com/snu-sf/CompCertM/issues/"
 authors: [
   "Youngju Song <youngu.song@sf.snu.ac.kr>"
   "Minki Cho <minki.cho@sf.snu.ac.kr>"
@@ -13,22 +13,8 @@ authors: [
   "Jeehoon Kang <jeehoon.kang@cp.kaist.ac.kr>"
   "Chung-Kil Hur <gil.hur@sf.snu.ac.kr>"
 ]
-# Below are copied from CompCert's configuration and slightly modified.
-license: "INRIA Non-Commercial License Agreement"
-build: [
-  ["./configure"
-  "amd64-linux" {os = "linux"}
-  "amd64-macosx" {os = "macos"}
-  "amd64-cygwin" {os = "cygwin"}
-  "-prefix" "%{prefix}%"
-  "-install-coqdev"
-  "-clightgen"
-  "-use-external-Flocq"
-  "-use-external-MenhirLib"
-  "-coqdevdir" "%{lib}%/coq/user-contrib/compcertr"
-  "-ignore-coq-version"]
-  [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
-]
+license: "BSD-3-Clause"
+build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertr"]
 depends: [
