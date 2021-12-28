@@ -38,3 +38,7 @@ depends: [
   "coq-flocq" {>= "3.1.0" & < "4~"}
   "coq-menhirlib" {>= "20190626"}
 ]
+
+url {
+  git: "https://github.com/snu-sf/CompCertR.git#v3.9_adapt"
+}
