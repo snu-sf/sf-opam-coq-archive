@@ -1,0 +1,16 @@
+opam-version: "2.0"
+name: "coq-compcertr"
+maintainer: "youngju.song@sf.snu.ac.kr"
+synopsis: "CompCert refactored for CompCertM project"
+homepage: "https://sf.snu.ac.kr/compcertm/"
+dev-repo: "git+https://github.com/snu-sf/CompCertR.git"
+bug-reports: "https://github.com/snu-sf/CompCertR/issues/"
+authors: [
+  "Youngju Song <youngu.song@sf.snu.ac.kr>"
+]
+build: [make "-j%{jobs}%"]
+install: [make "-f" "Makefile.coq" "install"]
+remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertr"]
+depends: [
+  "coq" { (>= "8.13.2") & (< "8.15") }
+]
