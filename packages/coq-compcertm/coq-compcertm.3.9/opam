@@ -16,15 +16,11 @@ authors: [
 license: "BSD-3-Clause"
 build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 install: [make "install"]
-remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertr"]
+remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertm"]
 depends: [
-  "coq" { (>= "8.13.2") & (< "8.15") }
-  "menhir" {>= "20190626" }
-  "ocaml" {>= "4.05.0"}
-  "coq-flocq" {>= "3.1.0" & < "4~"}
-  "coq-menhirlib" {>= "20190626"}
+  "coq-compcertr" { }
 ]
 
 url {
-  git: "https://github.com/snu-sf/CompCertR.git#v3.9_adapt"
+  git: "https://github.com/snu-sf/CompCertM.git#v3.9"
 }
