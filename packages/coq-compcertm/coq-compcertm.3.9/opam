@@ -18,7 +18,7 @@ build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
 install: [make "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertm"]
 depends: [
-  "coq-compcertr" { }
+  "coq-compcertr" { = "3.9" }
 ]
 
 url {
