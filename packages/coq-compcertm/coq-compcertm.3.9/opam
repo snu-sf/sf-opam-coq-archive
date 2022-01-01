@@ -15,7 +15,7 @@ authors: [
 ]
 license: "BSD-3-Clause"
 build: [make "-j%{jobs}%" {ocaml:version >= "4.06"}]
-install: [make "install"]
+install: [make "-f" "Makefile.coq" "install"]
 remove: ["rm" "-rf" "%{lib}%/coq/user-contrib/compcertm"]
 depends: [
   "coq-compcertr" { = "3.9" }
