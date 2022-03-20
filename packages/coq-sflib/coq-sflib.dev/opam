@@ -16,5 +16,5 @@ depends: [
   "coq" { (>= "8.8") & (< "8.16") }
 ]
 url {
-  git: "https://github.com/snu-sf/sflib.git#master"
+  git: "https://github.com/snu-sf/sflib.git#8.13"
 }
