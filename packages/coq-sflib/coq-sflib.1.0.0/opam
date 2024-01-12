@@ -16,6 +16,6 @@ depends: [
   "coq" { >= "8.13" & < "8.18~"}
 ]
 url {
-  http: https://github.com/snu-sf/sflib/archive/refs/tags/1.0.0.tar.gz
+  http: "https://github.com/snu-sf/sflib/archive/refs/tags/1.0.0.tar.gz"
   checksum: "ee90ba19ddbdd8f34dbac20ffe2f9608"
 }
